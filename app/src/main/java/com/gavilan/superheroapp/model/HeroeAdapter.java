@@ -3,7 +3,8 @@ package com.gavilan.superheroapp.model;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -29,6 +30,7 @@ public class HeroeAdapter extends RecyclerView.Adapter<HeroeAdapter.ViewHolderDa
 
     @Override
     public void onBindViewHolder(@NonNull HeroeAdapter.ViewHolderDatos holder, int position) {
+        holder.CargarHeroe(ListaHeroes.get(position));
 
     }
 
@@ -38,8 +40,32 @@ public class HeroeAdapter extends RecyclerView.Adapter<HeroeAdapter.ViewHolderDa
     }
 
     public class ViewHolderDatos extends RecyclerView.ViewHolder {
+        TextView txtNombreHeroe;
+        ImageView imgHeroe;
         public ViewHolderDatos(@NonNull View itemView) {
             super(itemView);
+            txtNombreHeroe = itemView.findViewById(R.id.txtNombreHeroe);
+            imgHeroe = itemView.findViewById(R.id.imgHeroe);
         }
+        void CargarHeroe(Heroe heroe){
+            txtNombreHeroe.setText(heroe.getNombreHeroe());
+
+            switch ( heroe.getNombreHeroe() ){
+                case "Batman":
+                    imgHeroe.setImageResource(R.drawable.batman);
+                    break;
+                case "Iron man":
+                    imgHeroe.setImageResource(R.drawable.ironman);
+                    break;
+                case "Wolverine":
+                    imgHeroe.setImageResource(R.drawable.wolverine);
+                    break;
+                default:
+                    imgHeroe.setImageResource(R.drawable.capamerica);
+                    break;
+            }
+        }
+
+
     }
 }

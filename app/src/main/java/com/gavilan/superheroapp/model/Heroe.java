@@ -16,6 +16,7 @@ public class Heroe {
     private String mundo;
     private int edad;
 
+
     public int getIdHeroe() {
         return idHeroe;
     }
