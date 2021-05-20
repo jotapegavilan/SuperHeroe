@@ -50,20 +50,15 @@ public class HeroeAdapter extends RecyclerView.Adapter<HeroeAdapter.ViewHolderDa
         void CargarHeroe(Heroe heroe){
             txtNombreHeroe.setText(heroe.getNombreHeroe());
 
-            switch ( heroe.getNombreHeroe() ){
-                case "Batman":
-                    imgHeroe.setImageResource(R.drawable.batman);
+            switch ( heroe.getMundo() ){
+                case "Marvel":
+                    imgHeroe.setImageResource(R.drawable.marvel);
                     break;
-                case "Iron man":
-                    imgHeroe.setImageResource(R.drawable.ironman);
-                    break;
-                case "Wolverine":
-                    imgHeroe.setImageResource(R.drawable.wolverine);
-                    break;
-                default:
-                    imgHeroe.setImageResource(R.drawable.capamerica);
+                case "DC":
+                    imgHeroe.setImageResource(R.drawable.dc);
                     break;
             }
+
         }
 
 

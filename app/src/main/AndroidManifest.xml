@@ -9,13 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_new_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SuperHeroApp">
-        <activity android:name=".MainActivity">
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".NuevoHeroeActivity">
+
+        </activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
